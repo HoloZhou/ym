@@ -50,14 +50,24 @@ with col1:
 with col1:   
     restecg=st.selectbox('静息心电图结果',options=(0,1))
     
-    thalach=st.number_input('Insert thalach')
-    exang=st.selectbox('exang',options=(0,1))
+    thalach=st.number_input('每年体检次数')
+    exang=st.selectbox('是否有PCI史',options=(0,1))
     
 with col1:
-    oldpeak=st.number_input('运动后ST段降低')
-    slope=st.selectbox('峰值运动时ST段坡度',options=(0,1,2))
-    ca=st.selectbox('ca',options=(0,1))
-    tha=st.selectbox('thal',options=('正常','可逆损伤','不可逆损伤'))
+    oldpeak=st.number_input('运动后心率数值')
+    slop=st.selectbox('运动时是否有胸闷情况',options=('无','轻微','明显'))
+    if slop=='无':
+        slope=1
+    elif slop=='轻微':
+        slope=2
+    else:
+        slope=3
+    c=st.selectbox('肿瘤病史',options=('否','是'))
+    if c=='是':
+        ca=1
+    else:
+        ca=0
+    tha=st.selectbox('影像学显示心肌损伤情况',options=('正常','可逆损伤','不可逆损伤'))
     if tha=='正常':
         thal=1
     elif tha=='可逆损伤':
