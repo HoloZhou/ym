@@ -41,7 +41,7 @@ with col1:
     st.subheader('健康信息区')
     cp=st.selectbox('是否胸痛',options=(0,1,2,3))
     trestbps=st.number_input('静息血压')
-    chol=st.number_input('insert chol')
+    chol=st.number_input('体能指数')
     fb=st.selectbox('血糖值是否大于120mg/dl',options=('是','否'))
     if fb=='是':
         fbs=1
