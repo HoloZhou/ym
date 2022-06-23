@@ -10,13 +10,6 @@ import numpy as np
 import pandas as pd
 
 
-
-from tensorflow.keras.models import load_model
-
-ann = load_model('heart.h5')
-
-
-
 import streamlit as st
 from PIL import Image
 image1 = Image.open('image.png')
