@@ -19,7 +19,7 @@ ann = load_model('heart.h5')
 
 import streamlit as st
 from PIL import Image
-image = Image.open('image_1.png')
+image = Image.open('image.png')
 
 
 col1, col2=st.columns([2,3])
