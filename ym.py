@@ -43,22 +43,22 @@ with col1:
     st.image(image2)
 
 with col2:
-    st.subheader('预测结果')
+    st.subheader('诊断决策信息')
     outcome=dis(output)
     st.write('预测结果为',outcome)  
-    st.subheader('未来5年心脑血管病趋势预测')  
+    st.subheader('卒中风险')  
     vessels=np.random.rand(5,2) 
     line_data = pd.DataFrame(
     vessels,
-    columns=['心脏病风险', '卒中风险'])
+    columns=['腔隙性梗死', '后循环梗死'])
    
     st.line_chart(line_data,use_container_width=True,height=240)   
 
-    st.subheader('癌前病变风险评估') 
-    x = ('黏膜白斑','腺瘤性肠息肉','慢性萎缩性胃炎','乳腺囊性增生','肝硬化')
+    st.subheader('脑内静脉窦血栓的特征权重') 
+    x = ('男性患者','50岁以上','吸烟史','血栓病史','卒中家族史')
     y = np.random.rand(5,1) 
     chart_data= pd.DataFrame(
-        y,index=x,columns=['风险程度'])
+        y,index=x,columns=['权重系数'])
     st.bar_chart(chart_data,use_container_width=True,height=240)
 
 
